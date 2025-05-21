@@ -1,17 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfgaphij1ls6"]
+[gd_scene load_steps=2 format=3 uid="uid://dfgaphij1ls6"]
 
 [ext_resource type="PackedScene" uid="uid://b6sju3km700fs" path="res://Scences/Player/character_body_2d.tscn" id="1_u52ul"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
-size = Vector2(1209, 20)
 
 [node name="Level" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_u52ul")]
 position = Vector2(526, 179)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(583, 643)
-shape = SubResource("RectangleShape2D_u52ul")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1, 634, 1161, 640, 1153, 194, 1046, 194, 1032, 511, 510, 507, 490, 305, 266, 297, 305, 486, 73, 470, 67, -364, 7, -370)
